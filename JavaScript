@@ -1,0 +1,45 @@
+// A simple function to generate a random number between a minimum and maximum value (inclusive)
+function getRandomNumber(min, max) {
+  min = Math.ceil(min); // Ensure the minimum is an integer
+  max = Math.floor(max); // Ensure the maximum is an integer
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Example usage:
+const randomNumber = getRandomNumber(1, 100);
+console.log(`Random number between 1 and 100: ${randomNumber}`); // e.g., 42
+
+// A function to generate a random item from an array
+function getRandomItemFromArray(arr) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}
+
+// Example usage:
+const fruits = ['Apple', 'Banana', 'Orange', 'Mango', 'Grape'];
+const randomFruit = getRandomItemFromArray(fruits);
+console.log(`Random fruit: ${randomFruit}`); // e.g., Banana
+
+// A function to generate a random hexadecimal color code
+function getRandomHexColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+}
+
+// Example usage:
+const randomColor = getRandomHexColor();
+console.log(`Random hex color: ${randomColor}`); // e.g., #a3c1f4
+
+// A function to generate a random string of a specified length
+function getRandomString(length) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
+// Example usage:
+const randomString = getRandomString(8);
+console.log(`Random string of length 8: ${randomString}`); // e.g., bH7jK9pL
